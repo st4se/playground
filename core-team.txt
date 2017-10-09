@@ -1,6 +1,6 @@
 # For a first exercise in learning the Git paradigm, let's have everyone
 # clone the playground repository, edit this file to add your name, then
 # commit and push back to origin. That will be a simple example of how we
-# collaborative development.
+# do collaborative development.
 
 Steve Jenkins
