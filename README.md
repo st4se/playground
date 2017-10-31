@@ -1,4 +1,5 @@
-# playground
-Temporary play ground for initial work
+# ST4SE Playground
 
-And some new line for demo purposes ...
+This is a temporary play ground are for initial work and try-outs.
+
+Please see the [Wiki](https://github.com/st4se/playground/wiki) and in particular the [[Git-Work-Flow-Cookbook]] to get started.
