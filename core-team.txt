@@ -5,3 +5,4 @@
 
 Steve Jenkins
 Hans Peter de Koning
+Chris Paredis
