@@ -8,5 +8,6 @@ Hans Peter de Koning
 Chris Paredis
 David Long
 Henson Graves
+Bill Schindel
 **
 another test
