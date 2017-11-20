@@ -106,14 +106,7 @@
     <!-- http://www.st4se.org/playground/2017/10/composition#Directory -->
 
     <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#Directory">
-        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#Container"/>
         <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#FileSystemObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#contains"/>
-                <owl:allValuesFrom rdf:resource="http://www.st4se.org/playground/2017/10/composition#InformationObject"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -122,6 +115,13 @@
 
     <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#File">
         <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#FileSystemObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.st4se.org/playground/2017/10/composition#FileSystemObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -130,6 +130,18 @@
 
     <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#FileSystemObject">
         <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#InformationObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#contains"/>
+                <owl:allValuesFrom rdf:resource="http://www.st4se.org/playground/2017/10/composition#FileSystemObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://www.st4se.org/playground/2017/10/composition#Directory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
