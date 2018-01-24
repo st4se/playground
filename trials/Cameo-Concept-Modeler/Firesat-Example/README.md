@@ -1,0 +1,12 @@
+Trial use of Cameo Concept Modeler
+==================================
+
+The purpose of this exercise was to investigate whether Cameo Concept Modeler (CCM) is useful for illustrating ontology patterns.
+
+Cameo Concept Modeler is a plugin for MagicDraw that is described at and available from https://www.nomagic.com/product-addons/magicdraw-addons/cameo-concept-modeler-plugin#intro .
+
+After a little tweaking it was possible to import the OWL ontologies `base.owl` and `compositeUseCase.owl` into CCM. However, only TBox entities came through, not the ABox individuals.
+
+In order to complete the initial investigation, the 6 individuals were created manually in CCM in the form of UML Instance Specifications, which were then linked manually with the `contains / isContainedBy` ObjectProperty. This worked well and the result can be seen in the Object Diagram below.
+
+![Firesat Example Object Diagram](Firesat Object Diagram.png)
