@@ -10,3 +10,8 @@ After a little tweaking it was possible to import the OWL ontologies `base.owl` 
 In order to complete the initial investigation, the 6 individuals were created manually in CCM in the form of UML Instance Specifications, which were then linked manually with the `contains / isContainedBy` ObjectProperty. This worked well and the result can be seen in the Object Diagram below.
 
 ![Firesat Example Object Diagram](https://github.com/st4se/playground/blob/issue%3D%2310-cameo-concept/trials/Cameo-Concept-Modeler/Firesat-Example/Firesat%20Object%20Diagram.png)
+
+Conclusion
+----------
+
+The basics work, but OWL individuals are not imported. The UML Object Diagram notation should appeal to system engineers familiar with SysML as it uses similar graphical notation. However in its current state the workflow is too cumbersome due to loss of information on import of the OWL ontology files, in particular the OWL individuals.
