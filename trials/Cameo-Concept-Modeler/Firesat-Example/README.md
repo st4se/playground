@@ -7,7 +7,7 @@ Cameo Concept Modeler is a plugin for MagicDraw that is described at and availab
 
 After a little tweaking it was possible to import the OWL ontologies `base.owl` and `compositeUseCase.owl` into CCM. However, only TBox entities came through, not the ABox individuals.
 
-In order to complete the initial investigation, the 6 individuals were created manually in CCM in the form of UML Instance Specifications, which were then linked manually with the `contains / isContainedBy` ObjectProperty. This worked well and the result can be seen in the Object Diagram below.
+In order to complete the initial investigation, the 6 individuals were created manually in CCM in the form of UML Instance Specifications, which were then linked manually with the `contains / isContainedIn` ObjectProperty. This worked well and the result can be seen in the Object Diagram below.
 
 ![Firesat Example Object Diagram](https://github.com/st4se/playground/blob/issue%3D%2310-cameo-concept/trials/Cameo-Concept-Modeler/Firesat-Example/Firesat%20Object%20Diagram.png)
 
