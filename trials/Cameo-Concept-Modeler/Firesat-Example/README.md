@@ -11,6 +11,10 @@ In order to complete the initial investigation, the 6 individuals were created m
 
 ![Firesat Example Object Diagram](Firesat%20Object%20Diagram.png)
 
+The screenshot below shows the ontology as loaded into Cameo Concept Modeler.
+
+![Screenshot CCM with Firesat Example](Firesat-Example-in-CCM.PNG)
+
 Conclusion
 ----------
 
