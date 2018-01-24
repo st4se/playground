@@ -14,4 +14,4 @@ In order to complete the initial investigation, the 6 individuals were created m
 Conclusion
 ----------
 
-The basics work, but OWL individuals are not imported. The UML Object Diagram notation should appeal to system engineers familiar with SysML as it uses similar graphical notation. However in its current state the workflow is too cumbersome due to loss of information on import of the OWL ontology files, in particular the OWL individuals.
+The basics work, but OWL individuals are not imported. The UML Object Diagram notation should appeal to system engineers familiar with SysML as it uses similar graphical notation. However in its current state the workflow is too cumbersome due to loss of information on import of the OWL ontology files, in particular the OWL individuals. In addition unspecified cardinality on the range of an ObjectProperty (in OWL) does not get translated into `[0..*]` in UML but remains unspecified, and then causes a validation error in the UML instance specifications that has to be corrected manually. 
