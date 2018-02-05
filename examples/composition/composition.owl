@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.st4se.org/playground/2017/10/composition#"
+     xml:base="http://www.st4se.org/playground/2017/10/composition"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:composition="http://www.st4se.org/playground/2017/10/composition#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.st4se.org/playground/2017/10/composition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.st4se.org/playground/2017/10/composition#contains">
+        <owl:inverseOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#isContainedIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.st4se.org/playground/2017/10/composition#Container"/>
+        <rdfs:range rdf:resource="http://www.st4se.org/playground/2017/10/composition#ContainedEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#containsTransitively -->
+
+    <owl:ObjectProperty rdf:about="http://www.st4se.org/playground/2017/10/composition#containsTransitively">
+        <rdfs:subPropertyOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#contains"/>
+        <owl:inverseOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#isContainedInTransitively"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.st4se.org/playground/2017/10/composition#Container"/>
+        <rdfs:range rdf:resource="http://www.st4se.org/playground/2017/10/composition#ContainedEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#isContainedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.st4se.org/playground/2017/10/composition#isContainedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.st4se.org/playground/2017/10/composition#ContainedEntity"/>
+        <rdfs:range rdf:resource="http://www.st4se.org/playground/2017/10/composition#Container"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#isContainedInTransitively -->
+
+    <owl:ObjectProperty rdf:about="http://www.st4se.org/playground/2017/10/composition#isContainedInTransitively">
+        <rdfs:subPropertyOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#isContainedIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.st4se.org/playground/2017/10/composition#ContainedEntity"/>
+        <rdfs:range rdf:resource="http://www.st4se.org/playground/2017/10/composition#Container"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Aspect -->
+
+    <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#Aspect"/>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Component -->
+
+    <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#Component">
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#Concept"/>
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#ContainedEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#Container"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#contains"/>
+                <owl:allValuesFrom rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Concept -->
+
+    <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#Concept"/>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#ContainedEntity -->
+
+    <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#ContainedEntity">
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#Aspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Container -->
+
+    <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#Container">
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#Aspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Directory -->
+
+    <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#Directory">
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#FileSystemObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#File -->
+
+    <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#File">
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#FileSystemObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.st4se.org/playground/2017/10/composition#FileSystemObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#FileSystemObject -->
+
+    <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#FileSystemObject">
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#InformationObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#contains"/>
+                <owl:allValuesFrom rdf:resource="http://www.st4se.org/playground/2017/10/composition#FileSystemObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://www.st4se.org/playground/2017/10/composition#Directory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#InformationObject -->
+
+    <owl:Class rdf:about="http://www.st4se.org/playground/2017/10/composition#InformationObject">
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#Concept"/>
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#ContainedEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.st4se.org/playground/2017/10/composition#Container"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#contains"/>
+                <owl:allValuesFrom rdf:resource="http://www.st4se.org/playground/2017/10/composition#InformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.st4se.org/playground/2017/10/composition#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://www.st4se.org/playground/2017/10/composition#InformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Component1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.st4se.org/playground/2017/10/composition#Component1">
+        <rdf:type rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component"/>
+        <contains rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Component2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.st4se.org/playground/2017/10/composition#Component2">
+        <rdf:type rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component"/>
+        <contains rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Component3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.st4se.org/playground/2017/10/composition#Component3">
+        <rdf:type rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Component4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.st4se.org/playground/2017/10/composition#Component4">
+        <rdf:type rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component"/>
+        <contains rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Component5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.st4se.org/playground/2017/10/composition#Component5">
+        <rdf:type rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component"/>
+        <contains rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.st4se.org/playground/2017/10/composition#Component6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.st4se.org/playground/2017/10/composition#Component6">
+        <rdf:type rdf:resource="http://www.st4se.org/playground/2017/10/composition#Component"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
