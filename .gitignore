@@ -2,3 +2,5 @@
 *.log
 **/catalog-v001.xml
 
+**/.project
+**/representations.aird

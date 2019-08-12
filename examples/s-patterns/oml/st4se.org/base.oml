@@ -1,0 +1,20 @@
+open terminology <http://st4se.org/examples/base#> as base {
+
+	extends <../purl.org/dc/elements/1.1.oml>
+    extends <../www.w3.org/1999/02/22-rdf-syntax-ns.oml>
+    
+
+    aspect NamedThing
+
+    scalar property hasName {
+        domain NamedThing
+        range xsd:string
+    }
+
+    aspect IdentifiedThing
+
+    scalar property hasIdentifier {
+        domain IdentifiedThing
+        range xsd:string
+    }
+}

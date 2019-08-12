@@ -1,0 +1,22 @@
+open terminology <http://www.w3.org/2002/07/owl#> as owl {
+
+	extends <../../1999/02/22-rdf-syntax-ns.oml>
+
+	extends <../../2000/01/rdf-schema.oml>
+
+	annotation property backwardCompatibleWith
+
+	annotation property deprecated
+
+	annotation property incompatibleWith
+
+	annotation property priorVersion
+
+	annotation property versionInfo
+
+	string scalar rational specializes real {
+		pattern "[\\-+]?[0-9]+\\\\/[1-9][0-9]*"
+	}
+
+	string scalar real specializes xsd:anyAtomicType
+}

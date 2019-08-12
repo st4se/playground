@@ -1,0 +1,32 @@
+open terminology <http://purl.org/dc/elements/1.1/> as dc {
+
+	annotation property contributor
+
+	annotation property coverage
+
+	annotation property creator
+
+	annotation property date
+
+	annotation property ^description
+
+	annotation property format
+
+	annotation property identifier
+
+	annotation property ^language
+
+	annotation property publisher
+
+	annotation property relation
+
+	annotation property rights
+
+	annotation property ^source
+
+	annotation property subject
+
+	annotation property title
+
+	annotation property type
+}

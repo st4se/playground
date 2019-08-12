@@ -1,0 +1,10 @@
+open terminology <http://www.w3.org/2000/01/rdf-schema#> as rdfs {
+
+	annotation property comment
+
+	annotation property isDefinedBy
+
+	annotation property label
+
+	annotation property seeAlso
+}

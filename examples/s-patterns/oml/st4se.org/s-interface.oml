@@ -1,0 +1,30 @@
+open terminology <http://st4se.org/examples/s-interface#> as s-interface {
+    
+    extends <base.oml>
+
+    concept System specializes base:NamedThing, base:IdentifiedThing
+    
+    concept Interface specializes base:NamedThing, base:IdentifiedThing
+
+    concept SystemOfAccess specializes base:NamedThing, base:IdentifiedThing
+
+    reified relationship Presents {
+        source System
+        target Interface
+        forward presents
+        inverse isPresentedBy
+        inverseFunctional
+        asymmetric
+        irreflexive
+    }
+
+    reified relationship Joins {
+        source SystemOfAccess
+        target Interface
+        forward joins
+        inverse isJoinedIn
+        asymmetric
+        irreflexive
+    }
+
+}
