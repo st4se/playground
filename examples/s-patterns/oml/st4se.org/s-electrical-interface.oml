@@ -1,0 +1,37 @@
+open terminology <http://st4se.org/examples/s-electrical-interface#> as s-electrical-interface {
+
+    extends <s-interface.oml>
+
+    concept Interface specializes s-interface:Interface {
+        restricts every s-interface:isJoinedIn to Path
+        restricts every s-interface:transfers to TraversingThing
+    }
+    
+    concept CurrentInterface specializes Interface {
+        restricts every s-interface:isJoinedIn to ConductionPath
+        restricts every s-interface:transfers to Current
+    }
+
+    concept Path specializes s-interface:SystemOfAccess {
+        restricts every s-interface:joins to Interface
+        restricts every s-interface:isTraversedBy to TraversingThing
+    }
+
+    concept ConductionPath specializes Path {
+        restricts every s-interface:joins to CurrentInterface
+        restricts every s-interface:isTraversedBy to Current
+    }
+    
+    aspect TraversingThing specializes s-interface:TraversingThing
+    
+    concept Flow specializes TraversingThing, s-interface:Flow {
+        restricts every s-interface:isTransferredBy to Interface
+        restricts every s-interface:traverses to Path
+    }
+    
+    concept Current specializes Flow {
+        restricts every s-interface:isTransferredBy to CurrentInterface
+        restricts every s-interface:traverses to ConductionPath
+    }
+    
+}

@@ -8,6 +8,12 @@ open terminology <http://st4se.org/examples/s-interface#> as s-interface {
 
     concept SystemOfAccess specializes base:NamedThing, base:IdentifiedThing
 
+    aspect TraversingThing specializes base:NamedThing, base:IdentifiedThing
+    
+    concept Item specializes TraversingThing
+
+    concept Flow specializes TraversingThing
+    
     reified relationship Presents {
         source System
         target Interface
@@ -27,4 +33,40 @@ open terminology <http://st4se.org/examples/s-interface#> as s-interface {
         irreflexive
     }
 
+    reified relationship Traverses {
+        source TraversingThing
+        target SystemOfAccess
+        forward traverses
+        inverse isTraversedBy
+        asymmetric
+        irreflexive
+    }
+    
+    reified relationship Transfers {
+        source Interface
+        target TraversingThing
+        forward transfers
+        inverse isTransferredBy
+        asymmetric
+        irreflexive
+    }
+
+    reified relationship Sends specializes Transfers {
+        source Interface
+        target TraversingThing
+        forward sends
+        inverse isSentBy
+        asymmetric
+        irreflexive
+    }
+
+    reified relationship TransfersOut specializes Transfers {
+        source Interface
+        target TraversingThing
+        forward transfersOut
+        inverse isTransferredOutBy
+        asymmetric
+        irreflexive
+    }
+    
 }
